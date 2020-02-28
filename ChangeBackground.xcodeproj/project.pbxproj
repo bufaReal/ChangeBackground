@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		515AE3786D2BAAE6F6BADCFF /* libPods-ChangeBackground.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 421924F25EF8935A3B4907E2 /* libPods-ChangeBackground.a */; };
+		B946A5042400F71F008D0CA5 /* SelectColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B946A5032400F71F008D0CA5 /* SelectColorViewController.m */; };
 		B951312A23FCDABD004BF504 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B951312923FCDABD004BF504 /* AppDelegate.m */; };
 		B951312D23FCDABD004BF504 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B951312C23FCDABD004BF504 /* SceneDelegate.m */; };
 		B951313023FCDABD004BF504 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B951312F23FCDABD004BF504 /* ViewController.m */; };
@@ -14,9 +16,18 @@
 		B951313523FCDAC9004BF504 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B951313423FCDAC9004BF504 /* Assets.xcassets */; };
 		B951313823FCDAC9004BF504 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B951313623FCDAC9004BF504 /* LaunchScreen.storyboard */; };
 		B951313B23FCDAC9004BF504 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B951313A23FCDAC9004BF504 /* main.m */; };
+		B976977824028236001A87CD /* LinkedListStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B976977424028236001A87CD /* LinkedListStack.m */; };
+		B976977924028236001A87CD /* FillImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B976977524028236001A87CD /* FillImageView.m */; };
+		B976977E2403BC02001A87CD /* UIImage+changeColor.mm in Sources */ = {isa = PBXBuildFile; fileRef = B976977D2403BC02001A87CD /* UIImage+changeColor.mm */; };
+		B9F119342405044800C649C4 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B9F119332405044800C649C4 /* 2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		421924F25EF8935A3B4907E2 /* libPods-ChangeBackground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChangeBackground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5213F4AB06D302DE18E35613 /* Pods-ChangeBackground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangeBackground.debug.xcconfig"; path = "Target Support Files/Pods-ChangeBackground/Pods-ChangeBackground.debug.xcconfig"; sourceTree = "<group>"; };
+		8F51F4F2FB4C9BEBC2257215 /* Pods-ChangeBackground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangeBackground.release.xcconfig"; path = "Target Support Files/Pods-ChangeBackground/Pods-ChangeBackground.release.xcconfig"; sourceTree = "<group>"; };
+		B946A5022400F71F008D0CA5 /* SelectColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectColorViewController.h; sourceTree = "<group>"; };
+		B946A5032400F71F008D0CA5 /* SelectColorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectColorViewController.m; sourceTree = "<group>"; };
 		B951312523FCDABD004BF504 /* ChangeBackground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeBackground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B951312823FCDABD004BF504 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B951312923FCDABD004BF504 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,6 +40,13 @@
 		B951313723FCDAC9004BF504 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B951313923FCDAC9004BF504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B951313A23FCDAC9004BF504 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B976977324028236001A87CD /* LinkedListStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedListStack.h; sourceTree = "<group>"; };
+		B976977424028236001A87CD /* LinkedListStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedListStack.m; sourceTree = "<group>"; };
+		B976977524028236001A87CD /* FillImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillImageView.m; sourceTree = "<group>"; };
+		B976977624028236001A87CD /* FillImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillImageView.h; sourceTree = "<group>"; };
+		B976977C2403BC02001A87CD /* UIImage+changeColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+changeColor.h"; sourceTree = "<group>"; };
+		B976977D2403BC02001A87CD /* UIImage+changeColor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+changeColor.mm"; sourceTree = "<group>"; };
+		B9F119332405044800C649C4 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +54,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515AE3786D2BAAE6F6BADCFF /* libPods-ChangeBackground.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B311D1DD30C48926C7E900C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5213F4AB06D302DE18E35613 /* Pods-ChangeBackground.debug.xcconfig */,
+				8F51F4F2FB4C9BEBC2257215 /* Pods-ChangeBackground.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		83F8CAF8CB05D42DD53DC791 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				421924F25EF8935A3B4907E2 /* libPods-ChangeBackground.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B951311C23FCDABD004BF504 = {
 			isa = PBXGroup;
 			children = (
 				B951312723FCDABD004BF504 /* ChangeBackground */,
 				B951312623FCDABD004BF504 /* Products */,
+				3B311D1DD30C48926C7E900C /* Pods */,
+				83F8CAF8CB05D42DD53DC791 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,19 +99,36 @@
 		B951312723FCDABD004BF504 /* ChangeBackground */ = {
 			isa = PBXGroup;
 			children = (
+				B9769772240281DE001A87CD /* SDK */,
 				B951312823FCDABD004BF504 /* AppDelegate.h */,
 				B951312923FCDABD004BF504 /* AppDelegate.m */,
 				B951312B23FCDABD004BF504 /* SceneDelegate.h */,
 				B951312C23FCDABD004BF504 /* SceneDelegate.m */,
 				B951312E23FCDABD004BF504 /* ViewController.h */,
 				B951312F23FCDABD004BF504 /* ViewController.m */,
+				B9F119332405044800C649C4 /* 2.jpg */,
 				B951313123FCDABD004BF504 /* Main.storyboard */,
+				B946A5022400F71F008D0CA5 /* SelectColorViewController.h */,
+				B946A5032400F71F008D0CA5 /* SelectColorViewController.m */,
 				B951313423FCDAC9004BF504 /* Assets.xcassets */,
 				B951313623FCDAC9004BF504 /* LaunchScreen.storyboard */,
 				B951313923FCDAC9004BF504 /* Info.plist */,
 				B951313A23FCDAC9004BF504 /* main.m */,
+				B976977C2403BC02001A87CD /* UIImage+changeColor.h */,
+				B976977D2403BC02001A87CD /* UIImage+changeColor.mm */,
 			);
 			path = ChangeBackground;
+			sourceTree = "<group>";
+		};
+		B9769772240281DE001A87CD /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				B976977624028236001A87CD /* FillImageView.h */,
+				B976977524028236001A87CD /* FillImageView.m */,
+				B976977324028236001A87CD /* LinkedListStack.h */,
+				B976977424028236001A87CD /* LinkedListStack.m */,
+			);
+			path = SDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +138,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B951313E23FCDAC9004BF504 /* Build configuration list for PBXNativeTarget "ChangeBackground" */;
 			buildPhases = (
+				8F6C2D1138D3B38D5F17BAA0 /* [CP] Check Pods Manifest.lock */,
 				B951312123FCDABD004BF504 /* Sources */,
 				B951312223FCDABD004BF504 /* Frameworks */,
 				B951312323FCDABD004BF504 /* Resources */,
@@ -135,11 +191,37 @@
 			files = (
 				B951313823FCDAC9004BF504 /* LaunchScreen.storyboard in Resources */,
 				B951313523FCDAC9004BF504 /* Assets.xcassets in Resources */,
+				B9F119342405044800C649C4 /* 2.jpg in Resources */,
 				B951313323FCDABD004BF504 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F6C2D1138D3B38D5F17BAA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChangeBackground-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B951312123FCDABD004BF504 /* Sources */ = {
@@ -147,7 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B951313023FCDABD004BF504 /* ViewController.m in Sources */,
+				B976977E2403BC02001A87CD /* UIImage+changeColor.mm in Sources */,
+				B976977824028236001A87CD /* LinkedListStack.m in Sources */,
+				B976977924028236001A87CD /* FillImageView.m in Sources */,
 				B951312A23FCDABD004BF504 /* AppDelegate.m in Sources */,
+				B946A5042400F71F008D0CA5 /* SelectColorViewController.m in Sources */,
 				B951313B23FCDAC9004BF504 /* main.m in Sources */,
 				B951312D23FCDABD004BF504 /* SceneDelegate.m in Sources */,
 			);
@@ -287,6 +373,7 @@
 		};
 		B951313F23FCDAC9004BF504 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5213F4AB06D302DE18E35613 /* Pods-ChangeBackground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +391,7 @@
 		};
 		B951314023FCDAC9004BF504 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F51F4F2FB4C9BEBC2257215 /* Pods-ChangeBackground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
