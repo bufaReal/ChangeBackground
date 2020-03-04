@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SelectColorViewController : UIViewController
 
+@property (copy,nonatomic,readwrite)void (^MyBlock)(UIColor * color);
+@property (copy, nonatomic) void (^MyTolorance)(NSUInteger tolorance);
+
 @end
 
 NS_ASSUME_NONNULL_END

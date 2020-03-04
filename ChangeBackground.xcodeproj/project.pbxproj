@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,9 +16,12 @@
 		B951313523FCDAC9004BF504 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B951313423FCDAC9004BF504 /* Assets.xcassets */; };
 		B951313823FCDAC9004BF504 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B951313623FCDAC9004BF504 /* LaunchScreen.storyboard */; };
 		B951313B23FCDAC9004BF504 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B951313A23FCDAC9004BF504 /* main.m */; };
+		B96DF2002408F68C00102D0B /* IMG_1923.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B96DF1FE2408F68B00102D0B /* IMG_1923.jpg */; };
+		B96DF2012408F68C00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png in Resources */ = {isa = PBXBuildFile; fileRef = B96DF1FF2408F68B00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png */; };
+		B96DF2042409FF8000102D0B /* ChangeColorImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = B96DF2032409FF8000102D0B /* ChangeColorImage.mm */; };
 		B976977824028236001A87CD /* LinkedListStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B976977424028236001A87CD /* LinkedListStack.m */; };
 		B976977924028236001A87CD /* FillImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B976977524028236001A87CD /* FillImageView.m */; };
-		B976977E2403BC02001A87CD /* UIImage+changeColor.mm in Sources */ = {isa = PBXBuildFile; fileRef = B976977D2403BC02001A87CD /* UIImage+changeColor.mm */; };
+		B9D559F6240E276F005F83F4 /* ChangeSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D559F5240E276F005F83F4 /* ChangeSizeViewController.m */; };
 		B9F119342405044800C649C4 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B9F119332405044800C649C4 /* 2.jpg */; };
 /* End PBXBuildFile section */
 
@@ -40,12 +43,16 @@
 		B951313723FCDAC9004BF504 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B951313923FCDAC9004BF504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B951313A23FCDAC9004BF504 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B96DF1FE2408F68B00102D0B /* IMG_1923.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_1923.jpg; path = ../../../IMG_1923.jpg; sourceTree = "<group>"; };
+		B96DF1FF2408F68B00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = a38c06590bad8ed04bf11109f2577d218c6e1d4d.png; path = ../../../a38c06590bad8ed04bf11109f2577d218c6e1d4d.png; sourceTree = "<group>"; };
+		B96DF2022409FF8000102D0B /* ChangeColorImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeColorImage.h; sourceTree = "<group>"; };
+		B96DF2032409FF8000102D0B /* ChangeColorImage.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ChangeColorImage.mm; sourceTree = "<group>"; };
 		B976977324028236001A87CD /* LinkedListStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedListStack.h; sourceTree = "<group>"; };
 		B976977424028236001A87CD /* LinkedListStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedListStack.m; sourceTree = "<group>"; };
 		B976977524028236001A87CD /* FillImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillImageView.m; sourceTree = "<group>"; };
 		B976977624028236001A87CD /* FillImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillImageView.h; sourceTree = "<group>"; };
-		B976977C2403BC02001A87CD /* UIImage+changeColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+changeColor.h"; sourceTree = "<group>"; };
-		B976977D2403BC02001A87CD /* UIImage+changeColor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+changeColor.mm"; sourceTree = "<group>"; };
+		B9D559F4240E276F005F83F4 /* ChangeSizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeSizeViewController.h; sourceTree = "<group>"; };
+		B9D559F5240E276F005F83F4 /* ChangeSizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeSizeViewController.m; sourceTree = "<group>"; };
 		B9F119332405044800C649C4 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +113,8 @@
 				B951312C23FCDABD004BF504 /* SceneDelegate.m */,
 				B951312E23FCDABD004BF504 /* ViewController.h */,
 				B951312F23FCDABD004BF504 /* ViewController.m */,
+				B96DF1FF2408F68B00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png */,
+				B96DF1FE2408F68B00102D0B /* IMG_1923.jpg */,
 				B9F119332405044800C649C4 /* 2.jpg */,
 				B951313123FCDABD004BF504 /* Main.storyboard */,
 				B946A5022400F71F008D0CA5 /* SelectColorViewController.h */,
@@ -114,8 +123,10 @@
 				B951313623FCDAC9004BF504 /* LaunchScreen.storyboard */,
 				B951313923FCDAC9004BF504 /* Info.plist */,
 				B951313A23FCDAC9004BF504 /* main.m */,
-				B976977C2403BC02001A87CD /* UIImage+changeColor.h */,
-				B976977D2403BC02001A87CD /* UIImage+changeColor.mm */,
+				B96DF2022409FF8000102D0B /* ChangeColorImage.h */,
+				B96DF2032409FF8000102D0B /* ChangeColorImage.mm */,
+				B9D559F4240E276F005F83F4 /* ChangeSizeViewController.h */,
+				B9D559F5240E276F005F83F4 /* ChangeSizeViewController.m */,
 			);
 			path = ChangeBackground;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 				B951312123FCDABD004BF504 /* Sources */,
 				B951312223FCDABD004BF504 /* Frameworks */,
 				B951312323FCDABD004BF504 /* Resources */,
+				48539FA6D7C110EFEB00D517 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,15 +202,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				B951313823FCDAC9004BF504 /* LaunchScreen.storyboard in Resources */,
+				B96DF2002408F68C00102D0B /* IMG_1923.jpg in Resources */,
 				B951313523FCDAC9004BF504 /* Assets.xcassets in Resources */,
 				B9F119342405044800C649C4 /* 2.jpg in Resources */,
 				B951313323FCDABD004BF504 /* Main.storyboard in Resources */,
+				B96DF2012408F68C00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		48539FA6D7C110EFEB00D517 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChangeBackground/Pods-ChangeBackground-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChangeBackground/Pods-ChangeBackground-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChangeBackground/Pods-ChangeBackground-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8F6C2D1138D3B38D5F17BAA0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,8 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B951313023FCDABD004BF504 /* ViewController.m in Sources */,
-				B976977E2403BC02001A87CD /* UIImage+changeColor.mm in Sources */,
+				B96DF2042409FF8000102D0B /* ChangeColorImage.mm in Sources */,
 				B976977824028236001A87CD /* LinkedListStack.m in Sources */,
+				B9D559F6240E276F005F83F4 /* ChangeSizeViewController.m in Sources */,
 				B976977924028236001A87CD /* FillImageView.m in Sources */,
 				B951312A23FCDABD004BF504 /* AppDelegate.m in Sources */,
 				B946A5042400F71F008D0CA5 /* SelectColorViewController.m in Sources */,

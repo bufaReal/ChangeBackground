@@ -1,22 +1,27 @@
 //
-//  UIImage+changeColor.m
+//  ChangeColorImage.m
 //  ChangeBackground
 //
-//  Created by 孙树港 on 2020/2/24.
+//  Created by 孙树港 on 2020/2/29.
 //  Copyright © 2020 ClassroomM. All rights reserved.
 //
 
-#import "UIImage+changeColor.h"
+#import "ChangeColorImage.h"
 #include <stack>
 
 using namespace std;
 
-@implementation UIImage (changeColor)
+NSMutableArray *revokeArray;
+@interface ChangeColorImage ()
 
-- (UIImage *)floodFillImage:(UIColor *)newColor fromePoint:(CGPoint)startPoint
+//@property (nonatomic, strong)
+
+@end
+
+@implementation ChangeColorImage
+
+- (ChangeColorImage *)changeColor
 {
-    CGPoint savePoint = startPoint;
-    
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     // 获取当前的image指针
     CGImageRef imageRef = [self CGImage];
@@ -31,6 +36,7 @@ using namespace std;
     
     // 创建保存图片数据的载体
     unsigned char *imageData = (unsigned char *)malloc(imageWidth * imageHeight * bytesPerPixel);
+    
     // 存储空间所有位 都置0
     memset(imageData, 0, imageWidth * imageHeight * bytesPerPixel);
     
@@ -51,22 +57,36 @@ using namespace std;
     CGContextDrawImage(context, CGRectMake(0, 0, imageWidth, imageHeight), imageRef);
     
     /* 获取点击点的颜色 */
-    NSUInteger byteIndex = (bytesPerRow * roundf(startPoint.y)) + bytesPerPixel * roundf(startPoint.x);
+    NSUInteger byteIndex = (bytesPerRow * roundf(self.startPoint.y)) + bytesPerPixel * roundf(self.startPoint.x);
     NSUInteger oldColorCode = getColorCode(byteIndex, imageData);//需要被覆盖颜色
     
     // 如果是点击了边框 直接返回
     NSUInteger blackColor = getColorCodeFromUIColor([UIColor blackColor], bitmapInfo&kCGBitmapByteOrderMask);
     if (compareColor(oldColorCode, blackColor, 10)) {
-        return nil;
+        //传出image
+        CGImageRef newCGImage = CGBitmapContextCreateImage(context);
+        ChangeColorImage *result = (ChangeColorImage *)[UIImage imageWithCGImage:newCGImage scale:1.f orientation:UIImageOrientationUp];
+        CGImageRelease(newCGImage);
+        CGContextRelease(context);
+        free(imageData);
+        
+        return result;
     }
     
     // 如果新的颜色与本来旧的颜色一样 直接返回
-    if (compareColor(oldColorCode, getColorCodeFromUIColor(newColor, bitmapInfo & kCGBitmapByteOrderMask), 0)) {
-        return nil;
+    if (compareColor(oldColorCode, getColorCodeFromUIColor(self.MyNewColor, bitmapInfo & kCGBitmapByteOrderMask), 0)) {
+        //传出image
+        CGImageRef newCGImage = CGBitmapContextCreateImage(context);
+        ChangeColorImage *result = (ChangeColorImage *)[UIImage imageWithCGImage:newCGImage scale:1.f orientation:UIImageOrientationUp];
+        CGImageRelease(newCGImage);
+        CGContextRelease(context);
+        free(imageData);
+        
+        return result;
     }
     
     NSInteger newRed, newGreen, newBlue, newAlpha;
-    NSUInteger newColorCode = getColorCodeFromUIColor(newColor, bitmapInfo & kCGBitmapByteOrderMask);
+    NSUInteger newColorCode = getColorCodeFromUIColor(self.MyNewColor, bitmapInfo & kCGBitmapByteOrderMask);
     
     newRed = ((0xff000000 & newColorCode) >> 24);
     newGreen = ((0x00ff0000 & newColorCode) >> 16);
@@ -89,7 +109,7 @@ using namespace std;
         //先入栈北方的像素
         north = true;
         if (mystack.empty()) {
-            screenPoint = CGPointMake(roundf(startPoint.x), roundf(startPoint.y));
+            screenPoint = CGPointMake(roundf(self.startPoint.x), roundf(self.startPoint.y));
         } else {
             screenPoint = CGPointMake(roundf(mystack.top().x), roundf(mystack.top().y));
         }
@@ -98,7 +118,7 @@ using namespace std;
             NSUInteger bitMapIndex = (bytesPerRow * roundf(--screenPoint.y)) + bytesPerPixel * roundf(screenPoint.x);
             screenColor = getColorCode(bitMapIndex, imageData);
             //进行匹配是否与当前颜色相同
-            if (compareColor(screenColor, oldColorCode, 0)) {
+            if (compareColor(screenColor, oldColorCode, self.tolorance)) {
                 //替换颜色并且入栈
                 // 改变imageData里面的当前像素的颜色数值
                 NSUInteger screenIndex = (bytesPerRow * roundf(screenPoint.y)) + bytesPerPixel * roundf(screenPoint.x);
@@ -120,7 +140,7 @@ using namespace std;
         NSUInteger bitMapIndex = (bytesPerRow * roundf(screenPoint.y)) + bytesPerPixel * roundf(++screenPoint.x);
         screenColor = getColorCode(bitMapIndex, imageData);
         //进行匹配是否与当前颜色相同
-        if (compareColor(screenColor, oldColorCode, 0)) {
+        if (compareColor(screenColor, oldColorCode, self.tolorance)) {
             //替换颜色并且入栈
             // 改变imageData里面的当前像素的颜色数值
             NSUInteger screenIndex = (bytesPerRow * roundf(screenPoint.y)) + bytesPerPixel * roundf(screenPoint.x);
@@ -144,7 +164,7 @@ using namespace std;
             NSUInteger bitMapIndex = (bytesPerRow * roundf(++screenPoint.y)) + bytesPerPixel * roundf(screenPoint.x);
             screenColor = getColorCode(bitMapIndex, imageData);
             //进行匹配是否与当前颜色相同
-            if (compareColor(screenColor, oldColorCode, 0)) {
+            if (compareColor(screenColor, oldColorCode, self.tolorance)) {
                 //替换颜色并且入栈
                 // 改变imageData里面的当前像素的颜色数值
                 NSUInteger screenIndex = (bytesPerRow * roundf(screenPoint.y)) + bytesPerPixel * roundf(screenPoint.x);
@@ -167,7 +187,7 @@ using namespace std;
         bitMapIndex = (bytesPerRow * roundf(screenPoint.y)) + bytesPerPixel * roundf(--screenPoint.x);
         screenColor = getColorCode(bitMapIndex, imageData);
         //进行匹配是否与当前颜色相同
-        if (compareColor(screenColor, oldColorCode, 0)) {
+        if (compareColor(screenColor, oldColorCode, self.tolorance)) {
             //替换颜色并且入栈
             // 改变imageData里面的当前像素的颜色数值
             NSUInteger screenIndex = (bytesPerRow * roundf(screenPoint.y)) + bytesPerPixel * roundf(screenPoint.x);
@@ -194,13 +214,28 @@ using namespace std;
     
     //传出image
     CGImageRef newCGImage = CGBitmapContextCreateImage(context);
-    UIImage *result = [UIImage imageWithCGImage:newCGImage scale:1.f orientation:UIImageOrientationUp];
+    ChangeColorImage *result = (ChangeColorImage *)[UIImage imageWithCGImage:newCGImage scale:1.f orientation:UIImageOrientationUp];
     CGImageRelease(newCGImage);
     CGContextRelease(context);
     free(imageData);
+    
     return result;
 }
 
++(void)redoImage:(ChangeColorImage *)result
+{
+    if (!revokeArray) {
+        revokeArray = [NSMutableArray array];
+    }
+    [revokeArray addObject:result];
+}
+
++ (ChangeColorImage *)revokeLastImage
+{
+    [revokeArray removeLastObject];
+    ChangeColorImage *image = [[revokeArray lastObject] copy];
+    return image;
+}
 
 
 #pragma mark - Privated Method
@@ -284,5 +319,7 @@ bool compareColor (NSUInteger colorA, NSUInteger colorB, NSInteger tolorance) {
     return true;
 }
 
+#pragma mark getter
 
 @end
+
