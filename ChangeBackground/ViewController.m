@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <YYWebImage.h>
+#import <Masonry.h>
 #import "ChangeColorImage.h"
 #import "SelectColorViewController.h"
 #import "ChangeSizeViewController.h"
@@ -30,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.editImageView.image = [ChangeColorImage imageNamed:@"a38c06590bad8ed04bf11109f2577d218c6e1d4d.png"];
+    self.editImageView.image = [ChangeColorImage imageNamed:@"2.jpg"];
     
     self->myImage = [[ChangeColorImage  alloc] initWithData:UIImagePNGRepresentation(self.editImageView.image)];
     [ChangeColorImage redoImage:myImage];
@@ -41,10 +42,27 @@
     [super viewWillAppear:animated];
 }
 
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+}
+
 - (void)viewDidLayoutSubviews
 {
+    
+    if (self.editImageView.image.size.height > 318 || self.editImageView.image.size.width > 343) {
+        [self.editImageView sizeThatFits:CGSizeMake(343, 318)];
+    } else {
+        [self.editImageView sizeToFit];
+    }
     [super viewDidLayoutSubviews];
-    [self.editImageView sizeToFit];
+//    [self.editImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.equalTo(self.view);
+//        make.width.mas_lessThanOrEqualTo(343);
+//        make.height.mas_lessThanOrEqualTo(318);
+//        make.top.equalTo(self.view.mas_top).mas_offset(172);
+//    }];
 }
 
 

@@ -16,8 +16,6 @@
 		B951313523FCDAC9004BF504 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B951313423FCDAC9004BF504 /* Assets.xcassets */; };
 		B951313823FCDAC9004BF504 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B951313623FCDAC9004BF504 /* LaunchScreen.storyboard */; };
 		B951313B23FCDAC9004BF504 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B951313A23FCDAC9004BF504 /* main.m */; };
-		B96DF2002408F68C00102D0B /* IMG_1923.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B96DF1FE2408F68B00102D0B /* IMG_1923.jpg */; };
-		B96DF2012408F68C00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png in Resources */ = {isa = PBXBuildFile; fileRef = B96DF1FF2408F68B00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png */; };
 		B96DF2042409FF8000102D0B /* ChangeColorImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = B96DF2032409FF8000102D0B /* ChangeColorImage.mm */; };
 		B9D559F6240E276F005F83F4 /* ChangeSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D559F5240E276F005F83F4 /* ChangeSizeViewController.m */; };
 		B9F119342405044800C649C4 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B9F119332405044800C649C4 /* 2.jpg */; };
@@ -29,7 +27,7 @@
 		8F51F4F2FB4C9BEBC2257215 /* Pods-ChangeBackground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangeBackground.release.xcconfig"; path = "Target Support Files/Pods-ChangeBackground/Pods-ChangeBackground.release.xcconfig"; sourceTree = "<group>"; };
 		B946A5022400F71F008D0CA5 /* SelectColorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectColorViewController.h; sourceTree = "<group>"; };
 		B946A5032400F71F008D0CA5 /* SelectColorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectColorViewController.m; sourceTree = "<group>"; };
-		B951312523FCDABD004BF504 /* ChangeBackground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeBackground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B951312523FCDABD004BF504 /* 手修大师.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "手修大师.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B951312823FCDABD004BF504 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B951312923FCDABD004BF504 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B951312B23FCDABD004BF504 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -41,8 +39,6 @@
 		B951313723FCDAC9004BF504 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B951313923FCDAC9004BF504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B951313A23FCDAC9004BF504 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B96DF1FE2408F68B00102D0B /* IMG_1923.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_1923.jpg; path = ../../../IMG_1923.jpg; sourceTree = "<group>"; };
-		B96DF1FF2408F68B00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = a38c06590bad8ed04bf11109f2577d218c6e1d4d.png; path = ../../../a38c06590bad8ed04bf11109f2577d218c6e1d4d.png; sourceTree = "<group>"; };
 		B96DF2022409FF8000102D0B /* ChangeColorImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeColorImage.h; sourceTree = "<group>"; };
 		B96DF2032409FF8000102D0B /* ChangeColorImage.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ChangeColorImage.mm; sourceTree = "<group>"; };
 		B9D559F4240E276F005F83F4 /* ChangeSizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeSizeViewController.h; sourceTree = "<group>"; };
@@ -92,7 +88,7 @@
 		B951312623FCDABD004BF504 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B951312523FCDABD004BF504 /* ChangeBackground.app */,
+				B951312523FCDABD004BF504 /* 手修大师.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,8 +102,6 @@
 				B951312C23FCDABD004BF504 /* SceneDelegate.m */,
 				B951312E23FCDABD004BF504 /* ViewController.h */,
 				B951312F23FCDABD004BF504 /* ViewController.m */,
-				B96DF1FF2408F68B00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png */,
-				B96DF1FE2408F68B00102D0B /* IMG_1923.jpg */,
 				B9F119332405044800C649C4 /* 2.jpg */,
 				B951313123FCDABD004BF504 /* Main.storyboard */,
 				B946A5022400F71F008D0CA5 /* SelectColorViewController.h */,
@@ -143,7 +137,7 @@
 			);
 			name = ChangeBackground;
 			productName = ChangeBackground;
-			productReference = B951312523FCDABD004BF504 /* ChangeBackground.app */;
+			productReference = B951312523FCDABD004BF504 /* 手修大师.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -184,11 +178,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B951313823FCDAC9004BF504 /* LaunchScreen.storyboard in Resources */,
-				B96DF2002408F68C00102D0B /* IMG_1923.jpg in Resources */,
 				B951313523FCDAC9004BF504 /* Assets.xcassets in Resources */,
 				B9F119342405044800C649C4 /* 2.jpg in Resources */,
 				B951313323FCDABD004BF504 /* Main.storyboard in Resources */,
-				B96DF2012408F68C00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,15 +380,21 @@
 			baseConfigurationReference = 5213F4AB06D302DE18E35613 /* Pods-ChangeBackground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMJREZR47U;
+				CODE_SIGN_IDENTITY = "Apple Distribution: gao hu (XZ9826M66Q)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Distribution: gao hu (XZ9826M66Q)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = XZ9826M66Q;
 				INFOPLIST_FILE = ChangeBackground/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ClassroomM.ChangeBackground;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huang.ChangeBackground;
+				PRODUCT_NAME = "手修大师";
+				PROVISIONING_PROFILE_SPECIFIER = ssg2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -406,15 +404,21 @@
 			baseConfigurationReference = 8F51F4F2FB4C9BEBC2257215 /* Pods-ChangeBackground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JMJREZR47U;
+				CODE_SIGN_IDENTITY = "Apple Distribution: gao hu (XZ9826M66Q)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Apple Distribution: gao hu (XZ9826M66Q)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = XZ9826M66Q;
 				INFOPLIST_FILE = ChangeBackground/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ClassroomM.ChangeBackground;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huang.ChangeBackground;
+				PRODUCT_NAME = "手修大师";
+				PROVISIONING_PROFILE_SPECIFIER = ssg2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
