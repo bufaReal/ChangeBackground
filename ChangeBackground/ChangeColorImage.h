@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger tolorance;
 @property (nonatomic, strong) UIColor* MyNewColor;
 - (ChangeColorImage *)changeColor;
+- (ChangeColorImage *)changePonitColor;
 +(void)redoImage:(ChangeColorImage *)result;
 + (ChangeColorImage *)revokeLastImage;
 

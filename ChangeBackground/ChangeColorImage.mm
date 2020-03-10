@@ -74,7 +74,7 @@ NSMutableArray *revokeArray;
     }
     
     // 如果新的颜色与本来旧的颜色一样 直接返回
-    if (compareColor(oldColorCode, getColorCodeFromUIColor(self.MyNewColor, bitmapInfo & kCGBitmapByteOrderMask), 0)) {
+    if (compareColor(oldColorCode, getColorCodeFromUIColor(self.MyNewColor, bitmapInfo & kCGBitmapByteOrderMask), self.tolorance)) {
         //传出image
         CGImageRef newCGImage = CGBitmapContextCreateImage(context);
         ChangeColorImage *result = (ChangeColorImage *)[UIImage imageWithCGImage:newCGImage scale:1.f orientation:UIImageOrientationUp];
@@ -211,6 +211,79 @@ NSMutableArray *revokeArray;
         }
         
     } while ((!(mystack.empty()) || north || south || east || west));
+    
+    //传出image
+    CGImageRef newCGImage = CGBitmapContextCreateImage(context);
+    ChangeColorImage *result = (ChangeColorImage *)[UIImage imageWithCGImage:newCGImage scale:1.f orientation:UIImageOrientationUp];
+    CGImageRelease(newCGImage);
+    CGContextRelease(context);
+    free(imageData);
+    
+    return result;
+}
+
+- (ChangeColorImage *)changePonitColor
+{
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    // 获取当前的image指针
+    CGImageRef imageRef = [self CGImage];
+    
+    NSUInteger imageWidth = CGImageGetWidth(imageRef);
+    NSUInteger imageHeight = CGImageGetHeight(imageRef);
+    
+    // 每个像素多少字节
+    NSUInteger bytesPerPixel = CGImageGetBitsPerPixel(imageRef) / 8;//bitsPerPixel：每个像素的字节数
+    NSUInteger bytesPerRow = CGImageGetBytesPerRow(imageRef);//bytesPerRow：每一行占用的字节数，注意这里的单位是字节
+    NSUInteger bitsPerComponent = CGImageGetBitsPerComponent(imageRef);//bitsPerComponent：每个颜色的比特数，例如在rgba-32模式下为8
+    
+    // 创建保存图片数据的载体
+    unsigned char *imageData = (unsigned char *)malloc(imageWidth * imageHeight * bytesPerPixel);
+    
+    // 存储空间所有位 都置0
+    memset(imageData, 0, imageWidth * imageHeight * bytesPerPixel);
+    
+    CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(imageRef);
+    if (kCGImageAlphaLast == (uint32_t)bitmapInfo ||
+        kCGImageAlphaFirst == (uint32_t)bitmapInfo)
+    {
+        bitmapInfo = (uint32_t)kCGImageAlphaPremultipliedLast;
+    }
+    
+    // 开启绘图的上下文
+    CGContextRef context = CGBitmapContextCreate(imageData, imageWidth, imageHeight, bitsPerComponent, bytesPerRow, colorSpace, bitmapInfo);
+    
+    // 关闭颜色空间
+    CGColorSpaceRelease(colorSpace);
+    
+    NSInteger newRed, newGreen, newBlue, newAlpha;
+    NSUInteger newColorCode = getColorCodeFromUIColor(self.MyNewColor, bitmapInfo & kCGBitmapByteOrderMask);
+    
+    newRed = ((0xff000000 & newColorCode) >> 24);
+    newGreen = ((0x00ff0000 & newColorCode) >> 16);
+    newBlue = ((0x0000ff00 & newColorCode) >> 8);
+    newAlpha = (0x000000ff & newColorCode);
+    // 绘制图片
+    CGContextDrawImage(context, CGRectMake(0, 0, imageWidth, imageHeight), imageRef);
+    
+    //组成一个9*9的矩阵
+    //嵌套两个循环，一个是x，一个是y
+    //先把点转移到左上角
+    CGPoint movePoint = CGPointMake(roundf(self.startPoint.x), roundf(self.startPoint.y));
+    --movePoint.x;
+    --movePoint.y;
+    for (int y = 0; y <= 2; y ++) {
+        for (int x = 0; x <= 2; x ++) {
+            NSUInteger screenIndex = (bytesPerRow * roundf(movePoint.y)) + bytesPerPixel * roundf(movePoint.x);
+            imageData[screenIndex + 0] = newRed;
+            imageData[screenIndex + 1] = newGreen;
+            imageData[screenIndex + 2] = newBlue;
+            imageData[screenIndex + 3] = newAlpha;
+            movePoint.x ++;
+        }
+        movePoint.x -= 3;
+        movePoint.y ++;
+    }
+    
     
     //传出image
     CGImageRef newCGImage = CGBitmapContextCreateImage(context);

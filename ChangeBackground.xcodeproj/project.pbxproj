@@ -19,8 +19,6 @@
 		B96DF2002408F68C00102D0B /* IMG_1923.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B96DF1FE2408F68B00102D0B /* IMG_1923.jpg */; };
 		B96DF2012408F68C00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png in Resources */ = {isa = PBXBuildFile; fileRef = B96DF1FF2408F68B00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png */; };
 		B96DF2042409FF8000102D0B /* ChangeColorImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = B96DF2032409FF8000102D0B /* ChangeColorImage.mm */; };
-		B976977824028236001A87CD /* LinkedListStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B976977424028236001A87CD /* LinkedListStack.m */; };
-		B976977924028236001A87CD /* FillImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B976977524028236001A87CD /* FillImageView.m */; };
 		B9D559F6240E276F005F83F4 /* ChangeSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D559F5240E276F005F83F4 /* ChangeSizeViewController.m */; };
 		B9F119342405044800C649C4 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B9F119332405044800C649C4 /* 2.jpg */; };
 /* End PBXBuildFile section */
@@ -47,10 +45,6 @@
 		B96DF1FF2408F68B00102D0B /* a38c06590bad8ed04bf11109f2577d218c6e1d4d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = a38c06590bad8ed04bf11109f2577d218c6e1d4d.png; path = ../../../a38c06590bad8ed04bf11109f2577d218c6e1d4d.png; sourceTree = "<group>"; };
 		B96DF2022409FF8000102D0B /* ChangeColorImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeColorImage.h; sourceTree = "<group>"; };
 		B96DF2032409FF8000102D0B /* ChangeColorImage.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ChangeColorImage.mm; sourceTree = "<group>"; };
-		B976977324028236001A87CD /* LinkedListStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedListStack.h; sourceTree = "<group>"; };
-		B976977424028236001A87CD /* LinkedListStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedListStack.m; sourceTree = "<group>"; };
-		B976977524028236001A87CD /* FillImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FillImageView.m; sourceTree = "<group>"; };
-		B976977624028236001A87CD /* FillImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FillImageView.h; sourceTree = "<group>"; };
 		B9D559F4240E276F005F83F4 /* ChangeSizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeSizeViewController.h; sourceTree = "<group>"; };
 		B9D559F5240E276F005F83F4 /* ChangeSizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeSizeViewController.m; sourceTree = "<group>"; };
 		B9F119332405044800C649C4 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
@@ -106,7 +100,6 @@
 		B951312723FCDABD004BF504 /* ChangeBackground */ = {
 			isa = PBXGroup;
 			children = (
-				B9769772240281DE001A87CD /* SDK */,
 				B951312823FCDABD004BF504 /* AppDelegate.h */,
 				B951312923FCDABD004BF504 /* AppDelegate.m */,
 				B951312B23FCDABD004BF504 /* SceneDelegate.h */,
@@ -129,17 +122,6 @@
 				B9D559F5240E276F005F83F4 /* ChangeSizeViewController.m */,
 			);
 			path = ChangeBackground;
-			sourceTree = "<group>";
-		};
-		B9769772240281DE001A87CD /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				B976977624028236001A87CD /* FillImageView.h */,
-				B976977524028236001A87CD /* FillImageView.m */,
-				B976977324028236001A87CD /* LinkedListStack.h */,
-				B976977424028236001A87CD /* LinkedListStack.m */,
-			);
-			path = SDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +243,7 @@
 			files = (
 				B951313023FCDABD004BF504 /* ViewController.m in Sources */,
 				B96DF2042409FF8000102D0B /* ChangeColorImage.mm in Sources */,
-				B976977824028236001A87CD /* LinkedListStack.m in Sources */,
 				B9D559F6240E276F005F83F4 /* ChangeSizeViewController.m in Sources */,
-				B976977924028236001A87CD /* FillImageView.m in Sources */,
 				B951312A23FCDABD004BF504 /* AppDelegate.m in Sources */,
 				B946A5042400F71F008D0CA5 /* SelectColorViewController.m in Sources */,
 				B951313B23FCDAC9004BF504 /* main.m in Sources */,
@@ -417,7 +397,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ClassroomM.ChangeBackground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -435,7 +415,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ClassroomM.ChangeBackground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

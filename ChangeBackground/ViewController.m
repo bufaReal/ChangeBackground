@@ -31,6 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.editImageView.image = [ChangeColorImage imageNamed:@"a38c06590bad8ed04bf11109f2577d218c6e1d4d.png"];
+    
     self->myImage = [[ChangeColorImage  alloc] initWithData:UIImagePNGRepresentation(self.editImageView.image)];
     [ChangeColorImage redoImage:myImage];
 }
@@ -38,6 +39,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self.editImageView sizeToFit];
 }
 
 
@@ -73,7 +80,11 @@
 - (IBAction)sureAction:(id)sender
 {
     NSURL *URL = [NSURL URLWithString:self.urlTextFeild.text];
-
+    
+    if (self.urlTextFeild.text.length == 0) {
+        return ;
+    }
+    
     [self.editImageView yy_setImageWithURL:URL
                                placeholder:nil
                                    options:YYWebImageOptionSetImageWithFadeAnimation
@@ -95,21 +106,39 @@
     
 }
 - (IBAction)selectNativePhoto:(id)sender {
-    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
     
-}
-- (IBAction)takePhotoAction:(id)sender {
-    if ([UIImagePickerController isSourceTypeAvailable:
-        UIImagePickerControllerSourceTypeCamera])
-    {
-        self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"图片来源" preferredStyle:UIAlertControllerStyleActionSheet];
+    //2.添加按钮动作
+    //2.1 确认按钮
+    UIAlertAction *conform = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+        [self presentViewController:self.imagePickerController animated:YES completion:nil];
+    }];
+    //2.2 取消按钮
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if ([UIImagePickerController isSourceTypeAvailable:
+            UIImagePickerControllerSourceTypeCamera])
+        {
+            self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+        else{
+            self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        [self presentViewController:self.imagePickerController animated:YES completion:nil];
+    }];
+    //2.3 关闭按钮
+    UIAlertAction *cancel1 = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    //3.将动作按钮 添加到控制器中
+    [alertController addAction:conform];
+    [alertController addAction:cancel];
+    [alertController addAction:cancel1];
+
+    [self presentViewController:alertController animated:YES completion:nil];
 }
+
 - (IBAction)shareAction:(UIBarButtonItem *)sender {
     NSArray *activityItems = @[self->myImage];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
@@ -125,6 +154,7 @@
         return ;
     } else {
         self.editImageView.image = image;
+        self->myImage = image;
     }
 }
 
@@ -148,6 +178,21 @@
     if ([segue.identifier isEqualToString:@"changeSizeIdentifier"]) {
         ChangeSizeViewController *vc = segue.destinationViewController;
         vc.sizeImage = self->myImage;
+        vc.MyPoint = ^(CGPoint point) {
+            __block ChangeColorImage *tmpImage = [[ChangeColorImage  alloc] initWithData:UIImagePNGRepresentation(self.editImageView.image)];
+               dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                   tmpImage.MyNewColor = self.changeColor;
+                   tmpImage.startPoint = point;
+                   tmpImage.tolorance = self ->myTolorance;
+                   self->myImage = [tmpImage changeColor];
+                   [ChangeColorImage redoImage:self->myImage];
+                   dispatch_async(dispatch_get_main_queue(), ^{
+                       self.editImageView.image = self->myImage;
+                   });
+               });
+        };
+        vc.tolorance = self -> myTolorance;
+        vc.lastColor = self.changeColor;
     }
 }
 

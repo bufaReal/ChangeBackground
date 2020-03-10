@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ChangeSizeViewController : UIViewController
 
 @property (nonatomic, strong) ChangeColorImage *sizeImage;
+@property (nonatomic, copy)void (^MyPoint)(CGPoint point);
+@property (nonatomic, strong) UIColor *lastColor;
+@property (nonatomic, assign) NSInteger tolorance;
+
 @end
 
 NS_ASSUME_NONNULL_END
